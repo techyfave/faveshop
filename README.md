@@ -1,84 +1,71 @@
-# 🛍️ FaveShop - Modern Django Ecommerce Platform
-FaveShop is a full-featured ecommerce web application built with Django, providing a seamless online shopping experience with user authentication, product management, shopping cart functionality, and more.
+# 🛍️ FaveShop - Django Ecommerce Platform
+FaveShop is a modern, full-featured ecommerce website built with Django that provides users with a complete online shopping experience.
 
 ## ✨ Features
+## 🛒 Shopping Features
+- **Product Catalog** - Browse products by categories with search functionality
 
-## 🛒 Core Features
-- **User Authentication:** Secure registration, login, and profile management
+- **Shopping Cart** - Add, update, and remove items with real-time calculations
 
-- **Product Catalog:** Browse products by categories with search functionality
+- **Product Reviews** - Users can rate and review products
 
-- **Shopping Cart:** Add, update, and remove items with real-time calculations
-
-- **Product Reviews:** Users can rate and review products
-
-- **Responsive Design:** Mobile-friendly interface built with Bootstrap 5
+- **Responsive Design** - Mobile-friendly interface built with Bootstrap 5
 
 ## 👤 User Features
-
 - Secure user registration and authentication
 
 - User profile management
 
 - Product review system
 
-- Order history (coming soon)
-
-- Wishlist functionality (coming soon)
+- Shopping cart persistence
 
 ## 🏪 Admin Features
-
 - Django admin interface for managing products, categories, and reviews
 
 - Product inventory management
 
 - User management
 
-- Order processing (coming soon)
-
 ## 🏗️ Tech Stack
 
 ### Backend
-- Python 3.13+ - Core programming language
+- Python 3.13+
 
-- Django 4.2+ - Web framework
+- Django 4.2+
 
-- Django REST Framework - API development
+- Django REST Framework
 
-- SQLite - Development database (easily switchable to PostgreSQL/MySQL)
+- SQLite/PostgreSQL
 
 ### Frontend
-- HTML5/CSS3 - Markup and styling
+- HTML5/CSS3
 
-- Bootstrap 5 - Responsive UI framework
+- Bootstrap 5
 
-- JavaScript - Interactive elements
+- JavaScript
 
-### Tools & Libraries
-- Pillow - Image processing
+### Tools
+- Pillow (Image processing)
 
-- Crispy Forms - Form styling
-
-- Python Decouple - Environment configuration
+- Crispy Forms (Form styling)
 
 ## 🚀 Quick Start
-
 ### Prerequisites
 - Python 3.13 or higher
 
-- pip (Python package manager)
-
-- Virtual environment (recommended)
+- pip package manager
 
 ### Installation
-1. Clone the repository
-   ```bash
-   git clone https://github.com/yourusername/faveshop.git
-cd faveshop
- ```
+1. **Clone and navigate**
 
-1. Create and activate virtual environment
-  ```bash
+```bash
+git clone https://github.com/yourusername/faveshop.git
+cd faveshop
+```
+2. **Setup virtual environment**
+
+``` bash
 # Windows
 python -m venv venv
 venv\Scripts\activate
@@ -87,8 +74,43 @@ venv\Scripts\activate
 python3 -m venv venv
 source venv/bin/activate
 ```
+3. **Install requirements**
 
-1. Install dependencies
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+```
+
+4. **Configure environment**
+```bash
+# Copy environment file
+cp .env.example .env
+# Edit .env with your settings
+```
+5. **Setup database**
+
+```bash
+python manage.py migrate
+python manage.py createsuperuser
+```
+6. **Run development server**
+
+```bash
+python manage.py runserver
+Visit http://127.0.0.1:8000 to start shopping!
+```
+
+## 📁 Project Structure
+```text
+faveshop/
+├── accounts/          # User authentication
+├── cart/             # Shopping cart functionality  
+├── orders/            # order info  
+├── pages/            # Static pages including homepage
+├── products/         # Product catalog, categories, reviews
+└── templates/        # HTML templates
+```
+
+## 📞 Support
+For questions or support, please contact the development team.
+
+Happy Shopping with FaveShop! 🛍️
