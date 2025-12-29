@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: faveshop
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn ecommerce_project.wsgi:application
+    envVars:
+      - key: DATABASE_URL
+        value: postgresql://user:pass@localhost/dbname
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4

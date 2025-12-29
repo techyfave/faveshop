@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="mb-0">User Profile</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-4">
+                        <div class="col-md-4 text-center">
+                            <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto" 
+                                 style="width: 120px; height: 120px; font-size: 48px;">
+                                {{ user.username|first|upper }}
+                            </div>
+                            <h5 class="mt-3">{{ user.username }}</h5>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row mb-3">
+                                <div class="col-4"><strong>Username:</strong></div>
+                                <div class="col-8">{{ user.username }}</div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-4"><strong>Email:</strong></div>
+                                <div class="col-8">{{ user.email|default:"Not set" }}</div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-4"><strong>Joined:</strong></div>
+                                <div class="col-8">{{ user.date_joined|date:"F j, Y" }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><strong>Last Login:</strong></div>
+                                <div class="col-8">{{ user.last_login|date:"F j, Y, g:i a"|default:"Never" }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="mt-4">
+                        <h5>Account Actions</h5>
+                        <div class="d-flex gap-2 mt-3">
+                            <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+                            <a href="{% url 'product_list' %}" class="btn btn-outline-primary">Continue Shopping</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Optional: Order History Section (if you have orders app) -->
+            {% comment %}
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h4 class="mb-0">Order History</h4>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted">No orders yet.</p>
+                    <a href="{% url 'product_list' %}" class="btn btn-primary">Start Shopping</a>
+                </div>
+            </div>
+            {% endcomment %}
+        </div>
+    </div>
+</div>
+{% endblock %}
